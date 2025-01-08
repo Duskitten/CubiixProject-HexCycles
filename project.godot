@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Cubiix Project: HexCycles"
+run/main_scene="res://Assets/Scenes/Shared/main_scene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=600
 
 [importer_defaults]
 
