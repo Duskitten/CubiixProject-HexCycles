@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://der4eyogafj8x"]
+
+[ext_resource type="Shader" path="res://addons/Shaders/Main_Cubiix_Material.gdshader" id="1_70o7y"]
+[ext_resource type="Texture2D" uid="uid://b32bqh7h1iu3h" path="res://addons/Mods/HexCycleAssets/Assets/Mesh/HexCycle/Color_Palette.png" id="2_w5ink"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_70o7y")
+shader_parameter/Body_SourceColor = PackedColorArray(0.996078, 0.996078, 0.996078, 1, 0.94902, 0.00392157, 0.00392157, 1, 0.0705882, 0.882353, 0.00392157, 1, 0.027451, 0.00392157, 0.909804, 1)
+shader_parameter/Body_Color = PackedColorArray(1, 1, 1, 1, 0.84375, 0.84375, 0.84375, 1, 0, 0, 0, 1, 0, 0.421748, 1, 1)
+shader_parameter/Body_Emission = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.377222, 1, 1)
+shader_parameter/Body_Metallic = PackedFloat32Array(0.8, 0.5, 0, 0)
+shader_parameter/Body_Roughness = PackedFloat32Array(0, 0.5, 1, 1)
+shader_parameter/Body_Emission_Str = PackedFloat32Array(0, 0, 0, 1)
+shader_parameter/Body_Alpha = PackedFloat32Array(0.5, 1, 1, 1)
+shader_parameter/Total = 4
+shader_parameter/texture_albedo = ExtResource("2_w5ink")

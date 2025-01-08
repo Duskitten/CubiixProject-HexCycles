@@ -1,0 +1,22 @@
+{
+	"ModID" : "HexCyclesAssets",
+	"ModName" : "Cubiix HexCycle Assets",
+	"ModDesc" : "Vehicles/Maps/Scripts for the Hexcycle mod.",
+	"ModAuthor" : "Duskitten/Selkspace",
+	"Assets" : {
+		"Models":{
+		},
+		"Override_Binds":{
+		},
+		"IDList":{
+		},
+		"Maps":{
+		},
+		"Scripts":{
+		},
+		"Materials":{
+		},
+		"Animations":{
+		},
+	}
+}
