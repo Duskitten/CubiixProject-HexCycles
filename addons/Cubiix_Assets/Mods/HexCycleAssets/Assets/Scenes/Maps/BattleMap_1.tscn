@@ -1,0 +1,105 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1xvnbbkvln14"]
+
+[ext_resource type="Texture2D" uid="uid://iglpdqsh35m" path="res://addons/Cubiix_Assets/Mods/HexCycleAssets/Assets/Textures/World/Tile_1.png" id="1_g13nh"]
+[ext_resource type="Script" path="res://addons/Cubiix_Assets/Mods/HexCycleAssets/Assets/Scripts/Scene_Loader_SubScript.gd" id="1_xak1h"]
+[ext_resource type="Texture2D" uid="uid://dvjxm8m4ht8g1" path="res://addons/Cubiix_Assets/Mods/HexCycleAssets/Assets/Textures/World/Tile_1_Emiss.png" id="2_1qhrd"]
+[ext_resource type="PackedScene" uid="uid://d1gmv3guyt7ur" path="res://addons/Cubiix_Assets/Mods/HexCycleAssets/Assets/Scenes/HexCycle/HexCycleTest.tscn" id="4_8e80l"]
+[ext_resource type="Script" path="res://addons/Cubiix_Assets/Mods/HexCycleAssets/Assets/Scripts/Core/HexCycle_ScriptLoader.gd" id="5_jrctk"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qdg05"]
+size = Vector2(500, 500)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wg6qh"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.638)
+albedo_texture = ExtResource("1_g13nh")
+metallic = 1.0
+metallic_specular = 0.0
+roughness = 0.22
+emission_enabled = true
+emission = Color(0.357092, 0.722025, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("2_1qhrd")
+uv1_scale = Vector3(0.3, 0.3, 0.3)
+uv1_triplanar = true
+texture_filter = 2
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vdobb"]
+data = PackedVector3Array(250, 0, 250, -250, 0, 250, 250, 0, -250, -250, 0, 250, -250, 0, -250, 250, 0, -250)
+
+[sub_resource type="Environment" id="Environment_8si4n"]
+background_mode = 1
+background_color = Color(0.0195312, 0.0390625, 0.0625, 1)
+tonemap_mode = 2
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 2.4
+glow_bloom = 0.23
+glow_blend_mode = 0
+fog_light_color = Color(0.0235294, 0.0352941, 0.0431373, 1)
+fog_density = 0.0311
+
+[node name="BattleMap_1" type="Node3D"]
+script = ExtResource("1_xak1h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_qdg05")
+surface_material_override/0 = SubResource("StandardMaterial3D_wg6qh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_vdobb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.406973, 0)
+mesh = SubResource("PlaneMesh_qdg05")
+surface_material_override/0 = SubResource("StandardMaterial3D_wg6qh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_vdobb")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.864095, 0)
+mesh = SubResource("PlaneMesh_qdg05")
+surface_material_override/0 = SubResource("StandardMaterial3D_wg6qh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_vdobb")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.37444, 0)
+mesh = SubResource("PlaneMesh_qdg05")
+surface_material_override/0 = SubResource("StandardMaterial3D_wg6qh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_vdobb")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 2.18557e-08, -0.5, 0.5, -3.78552e-08, 0.866025, 0, -1, -4.37114e-08, 0, 0, 0)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8si4n")
+
+[node name="HexCycle" parent="." instance=ExtResource("4_8e80l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.92993, 0)
+script = ExtResource("5_jrctk")
+Load_Script_ID = Array[String](["HexCyclesAssets/Player_HexCycle", "HexCyclesAssets/Player_Camera"])
+Load_Script_Passthrough = Array[Dictionary]([{}, {}])
+Assets_Path = "/root/Main_Scene/CoreLoader/AssetData"

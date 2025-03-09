@@ -24,7 +24,7 @@
 			"Player_HexCycle":{
 				"Path":"Assets/Scripts/Cycle_Player_Controller.gd"},
 			"Player_Camera":{
-				"Path":"Assets/Scripts/CameraController.gd"},
+				"Path":"Assets/Scripts/Cycle_Player_Controller.gd"},
 		},
 		"Materials":{
 		},

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp1yq3uhd344i"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Client/persistant_core.gd" id="1_a23ud"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e0si7"]
+
+[node name="Persistant_Core" type="Node"]
+script = ExtResource("1_a23ud")
+
+[node name="Core_Follow" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47926, 0)
+
+[node name="Cam_Y" type="Node3D" parent="Core_Follow"]
+
+[node name="Cam_X" type="Node3D" parent="Core_Follow/Cam_Y"]
+transform = Transform3D(1, 0, 0, 0, 0.707106, 0.707107, 0, -0.707107, 0.707106, 0, 0, 0)
+
+[node name="Cam_Z" type="SpringArm3D" parent="Core_Follow/Cam_Y/Cam_X"]
+shape = SubResource("SphereShape3D_e0si7")
+spring_length = 10.0
+margin = 0.07
+
+[node name="Camera3D" type="Camera3D" parent="Core_Follow/Cam_Y/Cam_X/Cam_Z"]

@@ -25,8 +25,12 @@ func _ready():
 	AssetData.name = "AssetData"
 	await AssetData.FinishedLoad
 	SceneData = load("res://addons/Cubiix_Assets/Scripts/Scene_Loader.gd").new()
+	Globals = load("res://addons/Cubiix_Assets/Mods/HexCycleAssets/Assets/Scripts/Core/Globals.gd").new()
+	Persistant_Core = load("res://Assets/Scenes/Shared/persistant_core.tscn").instantiate()
 	add_child(AssetData)
 	add_child(SceneData)
+	add_child(Globals)
+	add_child(Persistant_Core)
 	
 	Update_LogoText("Load O.K. ...")
 	await get_tree().create_timer(1).timeout
@@ -35,7 +39,7 @@ func _ready():
 	get_node("../CanvasLayer/Loading").hide()
 	print("Haoi")
 		#SceneData.call_deferred("Swap_Scene","Showcase",{},true,"")
-		#SceneData.call_deferred("load_scene","TTSAssets/Hexstaria_V2",{},true,"")
+	SceneData.call_deferred("load_scene","HexCyclesAssets/BattleMap_1",{},true,"")
 		#Persistant_Core.Hexii_UI_Transition("Enter","Hexii_Ui_Tablet_TitleScreen_Anim","Exit","", false)
 		#Persistant_Core.Hexii_UI_Transition("Enter","Hexii_Ui_ChatScreen_Anim","Exit","Hexii_Ui_NullScreen_Anim", true)
 		

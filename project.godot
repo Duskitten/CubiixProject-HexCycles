@@ -52,8 +52,3 @@ scene={
 "nodes/root_type": "",
 "skins/use_named_skins": true
 }
-
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"

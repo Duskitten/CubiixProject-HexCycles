@@ -1,32 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1gmv3guyt7ur"]
+[gd_scene load_steps=6 format=3 uid="uid://d1gmv3guyt7ur"]
 
+[ext_resource type="Script" path="res://addons/Cubiix_Assets/Mods/HexCycleAssets/Assets/Scripts/Cycle_Player_Controller.gd" id="1_7roe3"]
 [ext_resource type="PackedScene" uid="uid://fku3rqwehyue" path="res://addons/Cubiix_Assets/Mods/HexCycleAssets/Assets/Mesh/HexCycle/HexCycle.gltf" id="1_upbso"]
 [ext_resource type="Material" uid="uid://der4eyogafj8x" path="res://addons/Cubiix_Assets/Mods/HexCycleAssets/Assets/Materials/HexCycle_Material.tres" id="2_slen5"]
 
-[sub_resource type="Environment" id="Environment_igrti"]
-background_mode = 1
-glow_enabled = true
-glow_bloom = 0.5
+[sub_resource type="SphereShape3D" id="SphereShape3D_poqfy"]
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_gc8ly"]
 
-[node name="HexCycle" parent="." instance=ExtResource("1_upbso")]
+[node name="HexCycle" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_7roe3")
 
-[node name="Plane" parent="HexCycle" index="0"]
+[node name="Hub" parent="." instance=ExtResource("1_upbso")]
+
+[node name="Plane" parent="Hub" index="0"]
 surface_material_override/0 = ExtResource("2_slen5")
 
-[node name="Plane_001" parent="HexCycle" index="1"]
+[node name="Plane_001" parent="Hub" index="1"]
 surface_material_override/0 = ExtResource("2_slen5")
 
-[node name="Plane_002" parent="HexCycle" index="2"]
+[node name="Plane_002" parent="Hub" index="2"]
+transform = Transform3D(1, 0, 4.46638e-06, 0, 1, 0, -4.46638e-06, 0, 1, 0, 0.531765, -0.0475524)
 surface_material_override/0 = ExtResource("2_slen5")
 
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="HexCycle"]
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Hub"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_igrti")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.623397, -0.0432587)
+shape = SubResource("SphereShape3D_poqfy")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+[node name="Area3D" type="Area3D" parent="."]
 
-[editable path="HexCycle"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0289917, -0.200686, 1.49756)
+shape = SubResource("SphereShape3D_gc8ly")
+
+[editable path="Hub"]

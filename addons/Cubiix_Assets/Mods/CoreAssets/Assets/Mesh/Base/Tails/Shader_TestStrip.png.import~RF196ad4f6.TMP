@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0xcm4j8pi7mb"
-path.s3tc="res://.godot/imported/Shader_TestStrip.png-43c005b051349d8ad13be31e5f11b2bb.s3tc.ctex"
+uid="uid://clkri16023hmq"
+path.s3tc="res://.godot/imported/Shader_TestStrip.png-670588fae60b2f58d1e4788be1762a5b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/Cubiix_Assets/Mods/CoreAssets/Assets/Mesh/Base/Ears/Shader_TestStrip.png"
-dest_files=["res://.godot/imported/Shader_TestStrip.png-43c005b051349d8ad13be31e5f11b2bb.s3tc.ctex"]
+source_file="res://addons/Cubiix_Assets/Mods/CoreAssets/Assets/Mesh/Base/Tails/Shader_TestStrip.png"
+dest_files=["res://.godot/imported/Shader_TestStrip.png-670588fae60b2f58d1e4788be1762a5b.s3tc.ctex"]
 
 [params]
 
